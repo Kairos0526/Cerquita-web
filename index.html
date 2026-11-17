@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cerquita – Delivery local en tu barrio</title>
+  <meta name="description" content="Pide comida, súper y mandados de tu barrio. Te lo llevamos a la puerta en menos de 30 minutos.">
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#10312B',
+            paper: '#F6F9F5',
+            mint: '#D9EFE2',
+            sun: '#FFC93C',
+            wa: '#25D366'
+          },
+          fontFamily: {
+            display: ['"Bricolage Grotesque"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            body: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    /* Un solo movimiento llamativo: el pulso del botón de WhatsApp */
+    @keyframes pulso {
+      0%   { box-shadow: 0 0 0 0 rgba(37, 211, 102, .55); }
+      70%  { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+    .pulso { animation: pulso 2.2s ease-out infinite; }
+    @media (prefers-reduced-motion: reduce) {
+      .pulso { animation: none; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+
+<body class="bg-paper font-body text-ink antialiased">
+
+  <!-- Navegación -->
+  <header class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+    <a href="#" class="font-display text-2xl font-extrabold tracking-tight">cerquita<span class="text-sun">.</span></a>
+    <nav class="hidden items-center gap-8 text-sm font-medium md:flex">
+      <a href="#beneficios" class="hover:underline underline-offset-4">Beneficios</a>
+      <a href="#como-funciona" class="hover:underline underline-offset-4">Cómo funciona</a>
+      <a href="#pedir" class="rounded-full bg-ink px-5 py-2 text-paper transition hover:bg-ink/85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">Hacer un pedido</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Presentación -->
+    <section class="mx-auto grid max-w-6xl items-center gap-12 px-6 pb-20 pt-10 md:grid-cols-2 md:pb-28 md:pt-16">
+      <div>
+        <h1 class="font-display text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl">
+          Lo que pides en tu barrio, en tu puerta en 30 minutos.
+        </h1>
+        <p class="mt-6 max-w-md text-lg leading-relaxed text-ink/75">
+          Comida, súper, farmacia y mandados de los negocios de tu zona. Un repartidor, un mensaje y listo.
+        </p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a href="#pedir" class="inline-flex items-center justify-center rounded-full bg-sun px-7 py-3.5 font-semibold text-ink shadow-sm transition hover:brightness-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+            Pedir ahora
+          </a>
+          <a href="#como-funciona" class="inline-flex items-center justify-center rounded-full border border-ink/25 px-7 py-3.5 font-semibold transition hover:bg-mint focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+            Ver cómo funciona
+          </a>
+        </div>
+        <p class="mt-6 text-sm text-ink/60">Reparto de lunes a domingo, de 8:00 a 22:00.</p>
+      </div>
+
+      <!-- Tarjeta de seguimiento de pedido -->
+      <div class="relative mx-auto w-full max-w-md">
+        <div class="absolute -inset-4 -z-10 rotate-2 rounded-[2rem] bg-mint"></div>
+        <div class="rounded-3xl bg-white p-6 shadow-xl shadow-ink/10">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-sm text-ink/60">Tu pedido llega en</p>
+              <p class="font-display text-4xl font-extrabold">12 min</p>
+            </div>
+            <span class="rounded-full bg-mint px-3 py-1 text-sm font-semibold">En camino</span>
+          </div>
+
+          <!-- Ruta -->
+          <svg viewBox="0 0 360 120" class="mt-6 w-full" role="img" aria-label="Ruta del repartidor hacia tu casa">
+            <path d="M24 90 C 90 90, 110 30, 180 50 S 280 90, 336 28" fill="none" stroke="#10312B" stroke-opacity=".25" stroke-width="3" stroke-dasharray="3 9" stroke-linecap="round"/>
+            <path d="M24 90 C 90 90, 110 30, 180 50" fill="none" stroke="#10312B" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="24" cy="90" r="8" fill="#10312B"/>
+            <circle cx="180" cy="50" r="12" fill="#FFC93C" stroke="#10312B" stroke-width="3"/>
+            <path d="M336 14c-8 0-14 6-14 14 0 10 14 24 14 24s14-14 14-24c0-8-6-14-14-14z" fill="#25D366"/>
+            <circle cx="336" cy="28" r="5" fill="#fff"/>
+          </svg>
+
+          <ul class="mt-4 space-y-3 text-sm">
+            <li class="flex justify-between"><span class="text-ink/60">Recogido en</span><span class="font-semibold">Panadería La Esquina</span></li>
+            <li class="flex justify-between"><span class="text-ink/60">Repartidor</span><span class="font-semibold">Marco</span></li>
+            <li class="flex justify-between border-t border-ink/10 pt-3"><span class="text-ink/60">Envío</span><span class="font-semibold">$25</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section id="beneficios" class="bg-ink text-paper">
+      <div class="mx-auto max-w-6xl px-6 py-20 md:py-28">
+        <h2 class="max-w-xl font-display text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl">
+          Pensado para que pedir sea lo más fácil del día.
+        </h2>
+
+        <div class="mt-14 grid gap-x-16 gap-y-12 sm:grid-cols-2">
+          <article class="flex gap-5">
+            <svg class="mt-1 h-8 w-8 shrink-0 text-sun" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <div>
+              <h3 class="font-display text-xl font-bold">Entrega en 30 minutos o menos</h3>
+              <p class="mt-2 leading-relaxed text-paper/70">Repartimos solo dentro de tu zona, así tu pedido no hace viajes largos.</p>
+            </div>
+          </article>
+
+          <article class="flex gap-5">
+            <svg class="mt-1 h-8 w-8 shrink-0 text-sun" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10l1-5h16l1 5"/><path d="M4 10v10h16V10"/><path d="M9 20v-6h6v6"/></svg>
+            <div>
+              <h3 class="font-display text-xl font-bold">Compras en negocios locales</h3>
+              <p class="mt-2 leading-relaxed text-paper/70">Panaderías, restaurantes, tiendas y farmacias de tu zona reciben tu dinero directamente.</p>
+            </div>
+          </article>
+
+          <article class="flex gap-5">
+            <svg class="mt-1 h-8 w-8 shrink-0 text-sun" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.800-7 11-7 11z"/><circle cx="12" cy="10" r="2.500"/></svg>
+            <div>
+              <h3 class="font-display text-xl font-bold">Sigue tu pedido en tiempo real</h3>
+              <p class="mt-2 leading-relaxed text-paper/70">Te avisamos cuando sale de la tienda y cuando el repartidor está en tu puerta.</p>
+            </div>
+          </article>
+
+          <article class="flex gap-5">
+            <svg class="mt-1 h-8 w-8 shrink-0 text-sun" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18"/><path d="M7 15h3"/></svg>
+            <div>
+              <h3 class="font-display text-xl font-bold">Paga como prefieras</h3>
+              <p class="mt-2 leading-relaxed text-paper/70">Efectivo al recibir, transferencia o tarjeta. Envío fijo, sin cargos escondidos.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cómo funciona (pasos reales, por eso van numerados) -->
+    <section id="como-funciona" class="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <h2 class="font-display text-4xl font-extrabold tracking-tight sm:text-5xl">Pedir toma tres pasos.</h2>
+      <ol class="mt-12 grid gap-10 md:grid-cols-3">
+        <li>
+          <span class="flex h-11 w-11 items-center justify-center rounded-full bg-sun font-display text-lg font-extrabold">1</span>
+          <h3 class="mt-5 font-display text-xl font-bold">Escríbenos</h3>
+          <p class="mt-2 leading-relaxed text-ink/70">Cuéntanos qué necesitas y dónde estás, por WhatsApp.</p>
+        </li>
+        <li>
+          <span class="flex h-11 w-11 items-center justify-center rounded-full bg-sun font-display text-lg font-extrabold">2</span>
+          <h3 class="mt-5 font-display text-xl font-bold">Confirmamos</h3>
+          <p class="mt-2 leading-relaxed text-ink/70">Te enviamos el total y el tiempo estimado antes de salir.</p>
+        </li>
+        <li>
+          <span class="flex h-11 w-11 items-center justify-center rounded-full bg-sun font-display text-lg font-extrabold">3</span>
+          <h3 class="mt-5 font-display text-xl font-bold">Recibe en tu puerta</h3>
+          <p class="mt-2 leading-relaxed text-ink/70">Un repartidor de tu zona te lo lleva y listo.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Llamado a la acción -->
+    <section id="pedir" class="px-6 pb-24">
+      <div class="mx-auto max-w-4xl rounded-[2rem] bg-mint px-8 py-14 text-center md:py-16">
+        <h2 class="font-display text-3xl font-extrabold tracking-tight sm:text-4xl">¿Tienes hambre o te falta algo?</h2>
+        <p class="mx-auto mt-4 max-w-md text-ink/75">Escríbenos por WhatsApp y te respondemos en minutos.</p>
+        <a href="https://wa.me/584123062947?text=Hola%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener"
+           class="mt-8 inline-flex items-center justify-center rounded-full bg-ink px-8 py-3.5 font-semibold text-paper transition hover:bg-ink/85 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink">
+          Pedir por WhatsApp
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-ink/10">
+    <div class="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-8 text-sm text-ink/60 sm:flex-row sm:items-center sm:justify-between">
+      <p>© 2026 Cerquita. Hecho en tu barrio.</p>
+      <p>Cobertura: centro y zonas cercanas.</p>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a href="https://wa.me/584123062947?text=Hola%2C%20quiero%20hacer%20un%20pedido"
+     target="_blank" rel="noopener" aria-label="Pedir por WhatsApp"
+     class="group fixed bottom-5 right-5 z-50 flex items-center gap-3 rounded-full bg-wa p-4 text-white shadow-lg shadow-black/20 transition hover:scale-105 pulso focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-wa sm:bottom-7 sm:right-7">
+    <span class="hidden pl-2 font-semibold sm:inline">Pedir por WhatsApp</span>
+    <svg class="h-7 w-7" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+      <path d="M16.003 3C8.832 3 3 8.832 3 16c0 2.292.6 4.530 1.738 6.505L3 29l6.667-1.710A12.940 12.940 0 0016.003 29C23.170 29 29 23.168 29 16S23.170 3 16.003 3zm0 23.700c-1.960 0-3.880-.53-5.560-1.530l-.40-.24-3.960 1.020 1.060-3.860-.26-.40A10.640 10.640 0 015.300 16c0-5.870 4.780-10.650 10.703-10.650S26.700 10.130 26.700 16s-4.780 10.700-10.697 10.700zm5.840-7.980c-.32-.16-1.900-.94-2.200-1.040-.30-.11-.51-.16-.73.16-.21.320-.83 1.040-1.020 1.250-.19.220-.38.240-.70.080-.32-.16-1.360-.50-2.590-1.600-.96-.85-1.600-1.900-1.790-2.220-.19-.32-.02-.50.14-.66.15-.14.32-.38.48-.56.16-.19.21-.32.32-.54.11-.21.05-.40-.03-.56-.08-.16-.73-1.760-1-2.410-.26-.63-.53-.54-.73-.55h-.62c-.21 0-.56.08-.85.40-.29.32-1.120 1.090-1.120 2.660 0 1.570 1.140 3.090 1.300 3.300.16.21 2.250 3.430 5.450 4.810.76.33 1.360.52 1.820.67.77.24 1.460.21 2.010.13.61-.09 1.900-.78 2.170-1.530.27-.75.27-1.390.19-1.530-.08-.13-.29-.21-.61-.37z"/>
+    </svg>
+  </a>
+
+</body>
+</html>
